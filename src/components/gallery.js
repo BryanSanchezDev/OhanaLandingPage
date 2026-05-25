@@ -27,8 +27,6 @@ const galleryStyles = `
     border-radius: var(--radius);
     overflow: hidden;
     position: relative;
-    background: var(--ice);
-    border: 2px dashed var(--slate-light);
     transition: transform var(--transition), box-shadow var(--transition);
     cursor: pointer;
   }
@@ -97,14 +95,14 @@ function buildGalleryItem(index, imageSrc = null, alt = "") {
 // To add your photos, fill in the src and alt for each item below.
 // Leave src as null to keep the placeholder.
 const galleryPhotos = [
-  { src: null, alt: "Trip photo 1 — tall feature" },
-  { src: null, alt: "Trip photo 2" },
-  { src: null, alt: "Trip photo 3" },
-  { src: null, alt: "Trip photo 4" },
-  { src: null, alt: "Trip photo 5 — tall feature" },
-  { src: null, alt: "Trip photo 6" },
-  { src: null, alt: "Trip photo 7" },
-  { src: null, alt: "Trip photo 8" },
+  { src: "/images/1.jpeg", alt: "Trip photo 1" },
+  { src: "/images/2.jpeg", alt: "Trip photo 2" },
+  { src: "/images/3.jpeg", alt: "Trip photo 3" },
+  { src: "/images/4.jpeg", alt: "Trip photo 4" },
+  { src: "/images/5.jpeg", alt: "Trip photo 5" },
+  { src: "/images/6.jpeg", alt: "Trip photo 6" },
+  { src: "/images/7.jpeg", alt: "Trip photo 7" },
+  { src: "/images/8.jpeg", alt: "Trip photo 8" },
 ];
 
 /* ─── GALLERY HTML ───────────────────────────────────────────── */
