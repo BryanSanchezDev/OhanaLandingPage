@@ -174,9 +174,9 @@ const featuresHTML = `
           <div class="tier-header">
             <div class="tier-badge premium">👑 Full System</div>
             <div class="tier-name">Premium Membership</div>
-            <div class="tier-price"><strong>$47</strong>/month</div>
+            <div class="tier-price"><strong>$67</strong>/month</div>
             <div class="founding-note-small">
-              💰 Or save with annual: $470/year — 10 months for the price of 12
+              💰 Or save with annual: $670/year — 10 months for the price of 12
             </div>
           </div>
           <div class="tier-body">

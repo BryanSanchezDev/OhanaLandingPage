@@ -180,12 +180,12 @@ const pricingHTML = `
           <div class="pricing-head">
             <div class="pricing-tier-label">Premium</div>
             <div class="pricing-price">
-              <span class="price-amount">$47</span>
+              <span class="price-amount">$67</span>
               <span class="price-period">/month</span>
             </div>
             <div class="pricing-desc">Full system access, everything you need to plan like a pro.</div>
             <div class="founding-note-pricing">
-              💰 Or save with annual: $470/year — 10 months for the price of 12
+              💰 Or save with annual: $670/year — 10 months for the price of 12
             </div>
           </div>
           <div class="pricing-body">
