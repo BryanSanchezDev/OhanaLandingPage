@@ -160,7 +160,7 @@ const pricingHTML = `
               <li><span class="check-sm">✓</span> 10–15 AI prompt templates</li>
               <li><span class="check-sm">✓</span> Community access</li>
               <li><span class="check-sm">✓</span> Monthly live Q&amp;A</li>
-              <li><span class="check-sm">✓</span> Accessibility &amp; allergy checklist PDF</li>
+              <li><span class="check-sm">✓</span> 1 live session a month</li>
             </ul>
             <div class="pricing-cta">
               <a
@@ -176,16 +176,16 @@ const pricingHTML = `
 
         <!-- Premium -->
         <div class="pricing-card highlighted">
-          <div class="popular-banner">⭐ Founding Member Pricing — Limited Spots</div>
+          <div class="popular-banner">👑 Most Popular</div>
           <div class="pricing-head">
             <div class="pricing-tier-label">Premium</div>
             <div class="pricing-price">
-              <span class="price-amount">$37</span>
+              <span class="price-amount">$47</span>
               <span class="price-period">/month</span>
             </div>
-            <div class="pricing-desc">Full system access. Founding members lock in as low as $17/mo.</div>
+            <div class="pricing-desc">Full system access, everything you need to plan like a pro.</div>
             <div class="founding-note-pricing">
-              ⭐ Launch rate: $17–$27/mo · Price goes up after first 50 members
+              💰 Or save with annual: $470/year — 10 months for the price of 12
             </div>
           </div>
           <div class="pricing-body">
@@ -194,7 +194,7 @@ const pricingHTML = `
               <li><span class="check-sm">✓</span> 7-module complete course library</li>
               <li><span class="check-sm">✓</span> Private AI Travel Consultant (exclusive)</li>
               <li><span class="check-sm">✓</span> Multilingual allergy communication cards</li>
-              <li><span class="check-sm">✓</span> 2 live sessions/month + Plan With Me</li>
+              <li><span class="check-sm">✓</span> 2 live sessions/week + Plan With Me</li>
               <li><span class="check-sm">✓</span> Personal trip feedback from Bryan</li>
             </ul>
             <div class="pricing-cta">
@@ -203,7 +203,7 @@ const pricingHTML = `
                 target="_blank" rel="noopener"
                 class="btn btn-primary"
               >
-                🚀 Get Founding Member Access
+                🚀 Get Full Access
               </a>
             </div>
           </div>

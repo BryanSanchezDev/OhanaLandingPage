@@ -155,7 +155,6 @@ const featuresHTML = `
               <li><span class="check">✓</span> <span>10–15 curated AI prompt templates (destinations, packing, budgeting, logistics)</span></li>
               <li><span class="check">✓</span> <span>Community feed access — ask questions, share wins, get inspired</span></li>
               <li><span class="check">✓</span> <span>Monthly live Q&amp;A with Bryan</span></li>
-              <li><span class="check">✓</span> <span>Free Accessibility &amp; Allergy Travel Checklist (PDF)</span></li>
               <li><span class="check">✓</span> <span>Weekly trip inspiration and AI tips</span></li>
             </ul>
             <div class="tier-cta">
@@ -175,9 +174,9 @@ const featuresHTML = `
           <div class="tier-header">
             <div class="tier-badge premium">👑 Full System</div>
             <div class="tier-name">Premium Membership</div>
-            <div class="tier-price"><strong>$37–$67</strong>/month</div>
+            <div class="tier-price"><strong>$47</strong>/month</div>
             <div class="founding-note-small">
-              ⭐ Founding member rate: as low as $17/mo — locked in at launch
+              💰 Or save with annual: $470/year — 10 months for the price of 12
             </div>
           </div>
           <div class="tier-body">
@@ -185,7 +184,7 @@ const featuresHTML = `
               <li><span class="check">✓</span> <span>7-module in-depth course library (accessibility, allergy travel, itinerary building, budgeting + more)</span></li>
               <li><span class="check">✓</span> <span>Private AI Travel Consultant — a custom chatbot built exclusively for members, available 24/7</span></li>
               <li><span class="check">✓</span> <span>Restaurant allergy cards in multiple languages</span></li>
-              <li><span class="check">✓</span> <span>2 live sessions/month + "Plan With Me" live sessions</span></li>
+              <li><span class="check">✓</span> <span>2 live sessions/week + "Plan With Me" live sessions</span></li>
               <li><span class="check">✓</span> <span>Personal trip feedback from Bryan</span></li>
             </ul>
             <div class="tier-cta">
