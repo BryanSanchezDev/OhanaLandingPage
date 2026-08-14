@@ -1,39 +1,43 @@
 /* ═══════════════════════════════════════════════════════════════
-   GLOBAL STYLES — AI Family Travel Academy
+   GLOBAL STYLES — AI Ohana Travel Academy
    All design tokens, resets, and shared utility classes live here.
    Component-specific styles live inside each component file.
 ═══════════════════════════════════════════════════════════════ */
 
 /* ─── DESIGN TOKENS ─────────────────────────────────────────── */
 :root {
-  --navy:        #1d4ed8;
-  --indigo:      #3730a3;
-  --orange:      #fb923c;
-  --amber:       #f59e0b;
-  --sky:         #f0f9ff;
-  --ice:         #eff6ff;
-  --emerald:     #34d399;
-  --white:       #ffffff;
-  --slate-dark:  #334155;
-  --slate-mid:   #94a3b8;
+  --navy: #1d4ed8;
+  --indigo: #3730a3;
+  --orange: #fb923c;
+  --amber: #f59e0b;
+  --sky: #f0f9ff;
+  --ice: #eff6ff;
+  --emerald: #34d399;
+  --white: #ffffff;
+  --slate-dark: #334155;
+  --slate-mid: #94a3b8;
   --slate-light: #e2e8f0;
 
-  --font-display: 'Inter', sans-serif;
-  --font-body:    'Inter', sans-serif;
-  --radius:       14px;
-  --shadow-card:  0 4px 24px rgba(29, 78, 216, 0.08);
-  --shadow-lg:    0 16px 48px rgba(29, 78, 216, 0.14);
-  --transition:   0.25s ease;
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --radius: 14px;
+  --shadow-card: 0 4px 24px rgba(29, 78, 216, 0.08);
+  --shadow-lg: 0 16px 48px rgba(29, 78, 216, 0.14);
+  --transition: 0.25s ease;
 }
 
 /* ─── RESET ──────────────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--font-body);
@@ -49,7 +53,10 @@ img {
   border-radius: var(--radius);
 }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 /* ─── LAYOUT UTILITIES ───────────────────────────────────────── */
 .container {
@@ -58,11 +65,17 @@ a { color: inherit; text-decoration: none; }
   padding: 0 24px;
 }
 
-.section      { padding: 100px 0; }
-.section-alt  { background: var(--ice); }
+.section {
+  padding: 100px 0;
+}
+.section-alt {
+  background: var(--ice);
+}
 
 /* ─── TYPOGRAPHY ─────────────────────────────────────────────── */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-display);
   font-weight: 800;
   line-height: 1.2;
@@ -106,7 +119,10 @@ h1, h2, h3 {
   border-radius: 100px;
   border: none;
   cursor: pointer;
-  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
   text-decoration: none;
 }
 
@@ -144,24 +160,50 @@ h1, h2, h3 {
 
 /* ─── ANIMATIONS ─────────────────────────────────────────────── */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.6; transform: scale(1.3); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.3);
+  }
 }
 
-.fade-up           { opacity: 0; animation: fadeUp 0.7s ease forwards; }
-.delay-1           { animation-delay: 0.10s; }
-.delay-2           { animation-delay: 0.22s; }
-.delay-3           { animation-delay: 0.34s; }
-.delay-4           { animation-delay: 0.46s; }
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+.delay-1 {
+  animation-delay: 0.1s;
+}
+.delay-2 {
+  animation-delay: 0.22s;
+}
+.delay-3 {
+  animation-delay: 0.34s;
+}
+.delay-4 {
+  animation-delay: 0.46s;
+}
 
 /* ─── SHARED CARD STYLES ─────────────────────────────────────── */
 .card-hover {
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
 }
 .card-hover:hover {
   transform: translateY(-4px);
@@ -190,13 +232,19 @@ h1, h2, h3 {
   border-radius: var(--radius);
 }
 
-.photo-placeholder .p-icon { font-size: 2rem; }
+.photo-placeholder .p-icon {
+  font-size: 2rem;
+}
 
 /* ─── RESPONSIVE BREAKPOINTS ─────────────────────────────────── */
 @media (max-width: 900px) {
-  .section { padding: 64px 0; }
+  .section {
+    padding: 64px 0;
+  }
 }
 
 @media (max-width: 600px) {
-  .section { padding: 52px 0; }
+  .section {
+    padding: 52px 0;
+  }
 }

@@ -1,7 +1,7 @@
 {
   "name": "ai-family-travel-academy",
   "version": "1.0.0",
-  "description": "Landing page for AI Family Travel Academy",
+  "description": "Landing page for AI Ohana Travel Academy",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

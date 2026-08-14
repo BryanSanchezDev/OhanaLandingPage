@@ -1,6 +1,6 @@
-# AI Family Travel Academy — Landing Page
+# AI Ohana Travel Academy — Landing Page
 
-Marketing landing page for the [AI Family Travel Academy](https://www.skool.com/ai-family-travel-academy-1186/about) Skool community — a resource that teaches couples and families how to plan extraordinary trips using AI, including allergy-safe and accessibility travel.
+Marketing landing page for the [AI Ohana Travel Academy](https://www.skool.com/ai-family-travel-academy-1186/about) Skool community — a resource that teaches couples and families how to plan extraordinary trips using AI, including allergy-safe and accessibility travel.
 
 ---
 
@@ -21,13 +21,13 @@ Marketing landing page for the [AI Family Travel Academy](https://www.skool.com/
 
 ## Technology
 
-| Tool | Purpose |
-|------|---------|
-| [Vite](https://vitejs.dev) | Build tool and dev server |
-| Vanilla JavaScript | Component rendering and interactivity |
-| CSS custom properties | Design tokens and theming |
-| [Inter](https://fonts.google.com/specimen/Inter) (Google Fonts) | Typography |
-| Azure Static Web Apps | Hosting and deployment |
+| Tool                                                            | Purpose                               |
+| --------------------------------------------------------------- | ------------------------------------- |
+| [Vite](https://vitejs.dev)                                      | Build tool and dev server             |
+| Vanilla JavaScript                                              | Component rendering and interactivity |
+| CSS custom properties                                           | Design tokens and theming             |
+| [Inter](https://fonts.google.com/specimen/Inter) (Google Fonts) | Typography                            |
+| Azure Static Web Apps                                           | Hosting and deployment                |
 
 No frameworks. No dependencies beyond Vite. Each page section is a self-contained JS module that exports its styles, HTML, and an optional `init` function.
 

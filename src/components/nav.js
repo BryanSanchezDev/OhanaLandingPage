@@ -70,7 +70,7 @@ const navHTML = `
         <div class="nav-logo">
           <img src="/images/OhanaTravelIcon.png" alt="AI Ohana Travel Academy" class="nav-logo-img" />
           <div class="nav-brand-text">
-            AI Family Travel Academy
+            AI Ohana Travel Academy
             <span>Plan Smarter. Travel Better.</span>
           </div>
         </div>

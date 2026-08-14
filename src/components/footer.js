@@ -67,8 +67,8 @@ const footerHTML = `
       <div class="footer-inner">
 
         <div class="footer-logo">
-          <img src="/images/OhanaTravelIcon.png" alt="AI Family Travel Academy" class="nav-logo-img" />
-          <div class="footer-brand">AI Family Travel Academy</div>
+          <img src="/images/OhanaTravelIcon.png" alt="AI Ohana Travel Academy" class="nav-logo-img" />
+          <div class="footer-brand">AI Ohana Travel Academy</div>
         </div>
 
         <nav class="footer-links">
@@ -85,7 +85,7 @@ const footerHTML = `
         </nav>
 
         <p class="footer-copy">
-          © ${new Date().getFullYear()} AI Family Travel Academy · Built by Bryan Sanchez · All rights reserved
+          © ${new Date().getFullYear()} AI Ohana Travel Academy · Built by Bryan Sanchez · All rights reserved
         </p>
 
       </div>
