@@ -158,13 +158,9 @@ const featuresHTML = `
               <li><span class="check">✓</span> <span>Weekly trip inspiration and AI tips</span></li>
             </ul>
             <div class="tier-cta">
-              <a
-                href="https://www.skool.com/ai-family-travel-academy-1186/about"
-                target="_blank" rel="noopener"
-                class="btn btn-navy"
-              >
+              <button type="button" class="btn btn-navy" onclick="window.openLeadModal()">
                 Join Free Today
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -188,13 +184,9 @@ const featuresHTML = `
               <li><span class="check">✓</span> <span>Personal trip feedback from Bryan</span></li>
             </ul>
             <div class="tier-cta">
-              <a
-                href="https://www.skool.com/ai-family-travel-academy-1186/about"
-                target="_blank" rel="noopener"
-                class="btn btn-primary"
-              >
+              <button type="button" class="btn btn-primary" onclick="window.openLeadModal()">
                 🚀 Get Full Access
-              </a>
+              </button>
             </div>
           </div>
         </div>

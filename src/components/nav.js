@@ -75,14 +75,9 @@ const navHTML = `
           </div>
         </div>
 
-        <a
-          href="https://www.skool.com/ai-family-travel-academy-1186/about"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-primary"
-        >
+        <button type="button" class="btn btn-primary" onclick="window.openLeadModal()">
           Join Free ✈️
-        </a>
+        </button>
 
       </div>
     </div>

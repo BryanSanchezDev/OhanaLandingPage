@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You're In! — AI Ohana Travel Academy</title>
+    <meta name="description" content="You're officially part of the AI Ohana Travel Academy family. Check your inbox for your welcome email." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/images/favicon.ico" />
+
+    <!-- META PIXEL BASE CODE — paste your pixel snippet here -->
+    <!-- GOOGLE TAG BASE CODE — paste your Google Tag snippet here -->
+    <script>
+      window.addEventListener('load', function() {
+        if (typeof fbq === 'function') fbq('track', 'Lead');
+        if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'REPLACE_WITH_GTAG_ID' });
+      });
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --navy: #1d4ed8;
+        --orange: #fb923c;
+        --sky: #f0f9ff;
+        --slate-dark: #334155;
+        --slate-mid: #94a3b8;
+        --slate-light: #e2e8f0;
+        --emerald: #34d399;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-family: "Inter", sans-serif;
+        background: var(--sky);
+        color: var(--slate-dark);
+        line-height: 1.6;
+      }
+
+      .thank-you-wrap {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 20px;
+      }
+
+      .thank-you-card {
+        width: 100%;
+        max-width: 560px;
+        background: var(--white);
+        border: 1px solid var(--slate-light);
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        padding: 48px 40px;
+        text-align: center;
+      }
+
+      .thank-you-logo {
+        display: inline-block;
+        margin-bottom: 28px;
+      }
+
+      .thank-you-logo img {
+        max-height: 60px;
+        width: auto;
+        display: block;
+      }
+
+      .thank-you-icon {
+        margin: 0 auto 24px;
+      }
+
+      .thank-you-icon-circle {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: thankYouPopIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+      }
+
+      .thank-you-check {
+        stroke-dasharray: 24;
+        stroke-dashoffset: 24;
+        animation: thankYouDrawCheck 0.4s ease 0.5s forwards;
+      }
+
+      @keyframes thankYouPopIn {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes thankYouDrawCheck {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      .thank-you-headline {
+        font-weight: 800;
+        color: var(--navy);
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        line-height: 1.25;
+        margin-bottom: 14px;
+      }
+
+      .thank-you-sub {
+        font-weight: 400;
+        color: var(--slate-dark);
+        font-size: 1.05rem;
+        line-height: 1.65;
+        margin-bottom: 32px;
+      }
+
+      .thank-you-btn {
+        display: inline-block;
+        background: var(--orange);
+        color: var(--white);
+        font-weight: 700;
+        font-size: 1.05rem;
+        text-decoration: none;
+        border-radius: 10px;
+        padding: 16px 36px;
+        transition: background 0.25s ease, transform 0.25s ease;
+      }
+
+      .thank-you-btn:hover {
+        background: #ea7c2b;
+        transform: translateY(-2px);
+      }
+
+      .thank-you-back {
+        display: inline-block;
+        margin-top: 24px;
+        color: var(--slate-mid);
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .thank-you-back:hover {
+        color: var(--navy);
+      }
+
+      .thank-you-footer {
+        text-align: center;
+        color: var(--slate-mid);
+        font-weight: 400;
+        font-size: 0.85rem;
+        padding: 24px;
+      }
+
+      @media (max-width: 600px) {
+        .thank-you-wrap {
+          padding: 24px 16px;
+        }
+
+        .thank-you-card {
+          padding: 36px 24px;
+        }
+
+        .thank-you-btn {
+          display: block;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="thank-you-wrap">
+      <div class="thank-you-card">
+        <a href="/" class="thank-you-logo">
+          <img src="/images/OhanaTravelIcon.png" alt="AI Ohana Travel Academy" />
+        </a>
+
+        <svg class="thank-you-icon" width="80" height="80" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle class="thank-you-icon-circle" cx="28" cy="28" r="28" fill="#34d399" fill-opacity="0.15" />
+          <circle class="thank-you-icon-circle" cx="28" cy="28" r="20" fill="#34d399" />
+          <path class="thank-you-check" d="M19 28.5L25 34.5L37 21.5" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+        <h1 class="thank-you-headline">You're officially in. Welcome to the family! 🌿</h1>
+        <p class="thank-you-sub">Check your inbox for a welcome email with your next steps.</p>
+
+        <a
+          href="https://www.skool.com/ai-family-travel-academy-1186/about"
+          class="thank-you-btn"
+        >
+          Join the Free Community →
+        </a>
+
+        <div>
+          <a href="/" class="thank-you-back">← Back to Ohana Travel</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="thank-you-footer">Pura vida. 🌿 | Ohana Travel Academy</div>
+  </body>
+</html>

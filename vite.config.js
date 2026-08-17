@@ -1,11 +1,17 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  // Base path — change this if deploying to a subdirectory
-  // For Azure Static Web Apps root deployment, '/' is correct
-  base: '/',
+  base: "/",
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     emptyOutDir: true,
   },
-})
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:7071",
+        changeOrigin: true,
+      },
+    },
+  },
+});

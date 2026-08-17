@@ -163,13 +163,9 @@ const pricingHTML = `
               <li><span class="check-sm">✓</span> 1 live session a month</li>
             </ul>
             <div class="pricing-cta">
-              <a
-                href="https://www.skool.com/ai-family-travel-academy-1186/about"
-                target="_blank" rel="noopener"
-                class="btn btn-navy"
-              >
+              <button type="button" class="btn btn-navy" onclick="window.openLeadModal()">
                 Join Free
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -198,13 +194,9 @@ const pricingHTML = `
               <li><span class="check-sm">✓</span> Personal trip feedback from Bryan</li>
             </ul>
             <div class="pricing-cta">
-              <a
-                href="https://www.skool.com/ai-family-travel-academy-1186/about"
-                target="_blank" rel="noopener"
-                class="btn btn-primary"
-              >
+              <button type="button" class="btn btn-primary" onclick="window.openLeadModal()">
                 🚀 Get Full Access
-              </a>
+              </button>
             </div>
           </div>
         </div>

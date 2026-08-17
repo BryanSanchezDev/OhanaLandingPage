@@ -72,7 +72,7 @@ const footerHTML = `
         </div>
 
         <nav class="footer-links">
-          <a href="https://www.skool.com/ai-family-travel-academy-1186/about" target="_blank" rel="noopener">Join the Community</a>
+          <a href="#" onclick="window.openLeadModal(); return false;">Join the Community</a>
           <a href="#how-it-works">How It Works</a>
           <a href="#pricing">Pricing</a>
           <!--

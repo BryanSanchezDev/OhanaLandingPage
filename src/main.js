@@ -27,6 +27,7 @@ import { pricingStyles, pricingHTML } from "./components/pricing.js";
 import { faqStyles, faqHTML, initFaq } from "./components/faq.js";
 import { finalCtaStyles, finalCtaHTML } from "./components/finalCta.js";
 import { footerStyles, footerHTML } from "./components/footer.js";
+import buildLeadForm, { initLeadForm, openLeadModal } from "./components/lead-form.js";
 
 // ─── Inject component styles into <head> ─────────────────────
 const styleBlocks = [
@@ -69,3 +70,11 @@ document.getElementById("app").innerHTML = sections.join("\n");
 // ─── Init component behaviours ────────────────────────────────
 initNav();
 initFaq();
+
+// ─── Mount lead capture modal ───────────────────────────────────
+const modalMount = document.createElement("div");
+modalMount.id = "ohana-modal-mount";
+document.getElementById("app").appendChild(modalMount);
+modalMount.innerHTML = buildLeadForm("ohana-form-main");
+initLeadForm("ohana-form-main");
+window.openLeadModal = () => openLeadModal("ohana-form-main");

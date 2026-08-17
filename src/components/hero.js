@@ -162,13 +162,9 @@ const heroHTML = `
           </p>
 
           <div class="hero-cta-group fade-up delay-3">
-            <a
-              href="https://www.skool.com/ai-family-travel-academy-1186/about"
-              target="_blank" rel="noopener"
-              class="btn btn-primary"
-            >
+            <button type="button" class="btn btn-primary" onclick="window.openLeadModal()">
               🚀 Join Free — Start Planning Today
-            </a>
+            </button>
             <a href="#how-it-works" class="btn btn-outline">
               See How It Works
             </a>

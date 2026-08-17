@@ -55,6 +55,29 @@ const finalCtaStyles = `
     color: rgba(255,255,255,0.45);
     position: relative;
   }
+
+  .final-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fb923c;
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 36px;
+    cursor: pointer;
+    transition:
+      transform var(--transition),
+      box-shadow var(--transition),
+      background var(--transition);
+  }
+  .final-cta-btn:hover {
+    background: #ea7c2b;
+    transform: translateY(-2px);
+  }
 `;
 
 /* ─── FINAL CTA HTML ─────────────────────────────────────────── */
@@ -67,14 +90,9 @@ const finalCtaHTML = `
         And finally start planning the trip your crew actually deserves. Pura vida. 🌍
       </p>
       <div class="final-cta-group">
-        <a
-          href="https://www.skool.com/ai-family-travel-academy-1186/about"
-          target="_blank" rel="noopener"
-          class="btn btn-primary"
-          style="font-size:1.1rem;padding:16px 36px;"
-        >
+        <button type="button" class="final-cta-btn" onclick="window.openLeadModal()">
           🚀 Join Free — No Credit Card Needed
-        </a>
+        </button>
       </div>
       <p class="final-note">Free to join · 5-lesson starter course included · Accessibility &amp; Allergy expertise built in</p>
     </div>
