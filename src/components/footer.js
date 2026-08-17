@@ -81,7 +81,7 @@ const footerHTML = `
             You can generate these for free at termly.io or iubenda.com
           -->
           <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/terms-of-service.html">Terms of Service</a>
+          <a href="/terms.html">Terms of Service</a>
         </nav>
 
         <p class="footer-copy">
