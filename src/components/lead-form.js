@@ -15,6 +15,8 @@
  * classes on the overlay looked up by id.
  */
 
+import { getUTMParams } from "../utils/utm.js";
+
 const GTAG_CONVERSION_ID = "REPLACE_WITH_GTAG_ID";
 const TRANSITION_MS = 200;
 
@@ -282,14 +284,6 @@ function buildLeadForm(id = "ohana-form-1") {
 }
 
 /* ─── LEAD FORM BEHAVIOUR ────────────────────────────────────── */
-function getUtmParams() {
-  const params = new URLSearchParams(window.location.search);
-  return {
-    utmSource: params.get("utm_source") || "",
-    utmCampaign: params.get("utm_campaign") || "",
-  };
-}
-
 function fireConversionPixels() {
   if (typeof window.fbq === "function") {
     window.fbq("track", "Lead");
@@ -391,13 +385,26 @@ function initLeadForm(id = "ohana-form-1") {
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending...";
 
-    const { utmSource, utmCampaign } = getUtmParams();
+    const utms = getUTMParams();
+    const utmSource = utms.utm_source;
+    const utmCampaign = utms.utm_campaign;
+    const utmMedium = utms.utm_medium;
+    const utmContent = utms.utm_content;
+    const utmTerm = utms.utm_term;
 
     try {
       const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, email, utmSource, utmCampaign }),
+        body: JSON.stringify({
+          firstName,
+          email,
+          utmSource,
+          utmCampaign,
+          utmMedium,
+          utmContent,
+          utmTerm,
+        }),
       });
 
       if (!response.ok) throw new Error("Request failed");

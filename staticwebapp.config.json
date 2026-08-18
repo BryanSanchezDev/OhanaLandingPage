@@ -1,0 +1,23 @@
+{
+  "routes": [
+    {
+      "route": "/thank-you",
+      "rewrite": "/thank-you.html"
+    },
+    {
+      "route": "/privacy-policy",
+      "rewrite": "/privacy-policy.html"
+    },
+    {
+      "route": "/terms",
+      "rewrite": "/terms.html"
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*", "/api/*", "*.{css,js,json,ico,png,jpg,jpeg,svg,webp,pdf}"]
+  },
+  "mimeTypes": {
+    ".pdf": "application/pdf"
+  }
+}

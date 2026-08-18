@@ -136,6 +136,9 @@ module.exports = async function (context, req) {
       firstName,
       utmSource: body.utmSource || "organic",
       utmCampaign: body.utmCampaign || "none",
+      utmMedium: body.utmMedium || "",
+      utmContent: body.utmContent || "",
+      utmTerm: body.utmTerm || "",
       signupDate: new Date().toISOString(),
       convertedToSkool: false,
     });

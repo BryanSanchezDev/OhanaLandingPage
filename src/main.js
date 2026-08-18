@@ -28,6 +28,8 @@ import { faqStyles, faqHTML, initFaq } from "./components/faq.js";
 import { finalCtaStyles, finalCtaHTML } from "./components/finalCta.js";
 import { footerStyles, footerHTML } from "./components/footer.js";
 import buildLeadForm, { initLeadForm, openLeadModal } from "./components/lead-form.js";
+import { initCookieBanner } from "./components/cookie-banner.js";
+import { appendUTMsToExternalLinks } from "./utils/utm.js";
 
 // ─── Inject component styles into <head> ─────────────────────
 const styleBlocks = [
@@ -67,6 +69,9 @@ const sections = [
 
 document.getElementById("app").innerHTML = sections.join("\n");
 
+// ─── UTM passthrough ────────────────────────────────────────────
+appendUTMsToExternalLinks();
+
 // ─── Init component behaviours ────────────────────────────────
 initNav();
 initFaq();
@@ -78,3 +83,12 @@ document.getElementById("app").appendChild(modalMount);
 modalMount.innerHTML = buildLeadForm("ohana-form-main");
 initLeadForm("ohana-form-main");
 window.openLeadModal = () => openLeadModal("ohana-form-main");
+
+// ─── Cookie consent banner ──────────────────────────────────────
+initCookieBanner();
+
+// ─── Pixel initialization ─────────────────────────────────────
+// window.addEventListener('cookieConsentGranted', () => {
+//   // Paste Meta Pixel init code here
+//   // Paste Google Tag init code here
+// });

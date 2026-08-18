@@ -219,5 +219,22 @@
     </div>
 
     <div class="thank-you-footer">Pura vida. 🌿 | Ohana Travel Academy</div>
+
+    <script>
+      (function () {
+        var utmKeys = ['utm_source', 'utm_campaign', 'utm_medium', 'utm_content', 'utm_term'];
+        var params = new URLSearchParams(window.location.search);
+        var link = document.querySelector('a[href*="skool.com"]');
+
+        if (!link) return;
+
+        var url = new URL(link.href);
+        utmKeys.forEach(function (key) {
+          var value = params.get(key);
+          if (value) url.searchParams.set(key, value);
+        });
+        link.href = url.toString();
+      })();
+    </script>
   </body>
 </html>
