@@ -89,6 +89,10 @@ const cookieBannerStyles = `
       text-align: center;
     }
 
+    .ohana-cookie-text {
+      flex: 0 0 auto;
+    }
+
     .ohana-cookie-actions {
       justify-content: center;
     }
