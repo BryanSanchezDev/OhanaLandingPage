@@ -10,7 +10,9 @@ const pricingStyles = `
 
   .pricing-grid {
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
     gap: 24px;
   }
 
@@ -139,63 +141,39 @@ const pricingHTML = `
 
       <div class="pricing-header">
         <div class="tag">Simple Pricing</div>
-        <h2 class="section-title">Start free. Upgrade when it clicks.</h2>
-        <p class="section-subtitle">No pressure, no gimmicks. The free tier is genuinely valuable — we want you to feel it before you pay for anything.</p>
+        <h2 class="section-title">Simple, all-access pricing.</h2>
+        <p class="section-subtitle">No tiers, no upsells. One membership, everything included.</p>
       </div>
 
       <div class="pricing-grid">
 
-        <!-- Free -->
-        <div class="pricing-card">
-          <div class="pricing-head">
-            <div class="pricing-tier-label">Starter</div>
-            <div class="pricing-price">
-              <span class="price-amount">$0</span>
-            </div>
-            <div class="pricing-desc">Free forever. No credit card. Join and get real value immediately.</div>
-          </div>
-          <div class="pricing-body">
-            <ul class="pricing-features">
-              <li><span class="check-sm">✓</span> 5-lesson AI travel starter course</li>
-              <li><span class="check-sm">✓</span> 10–15 AI prompt templates</li>
-              <li><span class="check-sm">✓</span> Community access</li>
-              <li><span class="check-sm">✓</span> Monthly live Q&amp;A</li>
-              <li><span class="check-sm">✓</span> 1 live session a month</li>
-            </ul>
-            <div class="pricing-cta">
-              <button type="button" class="btn btn-navy" onclick="window.openLeadModal()">
-                Join Free
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Premium -->
+        <!-- All-Access Membership -->
         <div class="pricing-card highlighted">
-          <div class="popular-banner">👑 Most Popular</div>
+          <div class="popular-banner">👑 Everything Included</div>
           <div class="pricing-head">
-            <div class="pricing-tier-label">Premium</div>
+            <div class="pricing-tier-label">All-Access</div>
             <div class="pricing-price">
-              <span class="price-amount">$67</span>
+              <span class="price-amount">$9.99</span>
               <span class="price-period">/month</span>
             </div>
             <div class="pricing-desc">Full system access, everything you need to plan like a pro.</div>
             <div class="founding-note-pricing">
-              💰 Or save with annual: $670/year — 10 months for the price of 12
+              💰 Or save with annual: $99/year — 10 months for the price of 12
             </div>
           </div>
           <div class="pricing-body">
             <ul class="pricing-features">
-              <li><span class="check-sm">✓</span> Everything in Free, plus...</li>
-              <li><span class="check-sm">✓</span> 7-module complete course library</li>
-              <li><span class="check-sm">✓</span> Private AI Travel Consultant (exclusive)</li>
+              <li><span class="check-sm">✓</span> Full course library (all modules)</li>
+              <li><span class="check-sm">✓</span> Bella — your private AI Travel Consultant</li>
+              <li><span class="check-sm">✓</span> Full AI prompt &amp; template vault</li>
               <li><span class="check-sm">✓</span> Multilingual allergy communication cards</li>
-              <li><span class="check-sm">✓</span> 2 live sessions/week + Plan With Me</li>
+              <li><span class="check-sm">✓</span> Weekly live sessions + Plan With Me</li>
+              <li><span class="check-sm">✓</span> Community access</li>
               <li><span class="check-sm">✓</span> Personal trip feedback from Bryan</li>
             </ul>
             <div class="pricing-cta">
               <button type="button" class="btn btn-primary" onclick="window.openLeadModal()">
-                🚀 Get Full Access
+                Start for $9.99/month
               </button>
             </div>
           </div>

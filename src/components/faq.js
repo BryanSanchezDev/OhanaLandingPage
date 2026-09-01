@@ -82,12 +82,12 @@ const faqItems = [
     answer: 'Absolutely not. If you\'ve ever typed a question into Google, you can use AI for travel planning. We start from zero and walk you through every step. The tools we use are free, beginner-friendly, and honestly kind of fun once you get going.',
   },
   {
-    question: 'Is the free membership actually useful or just a sales pitch?',
-    answer: 'Genuinely useful. The 5-lesson starter course will take you from "I have no idea where to start" to having an actual trip vision, crew profile, budget framework, and itinerary outline. You\'ll get a quick win before you ever see a pricing page.',
+    question: 'Is the $9.99/month membership actually worth it, or just a sales pitch?',
+    answer: 'Genuinely useful from day one. The moment you join, you get the full course library, the AI prompt vault, and Bella — not a watered-down trial. Most members say the very first trip they plan pays for the membership many times over.',
   },
   {
     question: 'We travel with a family member who uses a wheelchair. Is this community for us?',
-    answer: '100% yes — this is one of the core reasons this community exists. The founder has personal, hands-on experience navigating accessibility travel. Module 4 in the premium curriculum is dedicated entirely to mobility and disability travel planning: wheelchair-accessible routes, hotel vetting, medical equipment logistics, and choosing destinations that are actually accessible — not just "accessible-ish."',
+    answer: '100% yes — this is one of the core reasons this community exists. The founder has personal, hands-on experience navigating accessibility travel. Module 4 in the course library is dedicated entirely to mobility and disability travel planning: wheelchair-accessible routes, hotel vetting, medical equipment logistics, and choosing destinations that are actually accessible — not just "accessible-ish."',
   },
   {
     question: 'My child has a serious food allergy. Can this community help?',
@@ -98,8 +98,8 @@ const faqItems = [
     answer: 'Google gives you generic information. This community gives you a system — built specifically for families with real-world complexity — plus AI-powered tools, templates, scripts, and a community of people doing the exact same thing. The difference is going from scattered information to a repeatable process that works for your family every single trip.',
   },
   {
-    question: 'What is the Private AI Travel Consultant?',
-    answer: "It's a custom AI chatbot built exclusively for premium members — trained on the community's methodology, frameworks, and full prompt library. It can help you research destinations, build itineraries, find allergy-safe options, and plan for accessibility needs — 24/7, in seconds. It's the flagship premium feature and not available anywhere else.",
+    question: 'Who is Bella, the AI Travel Consultant?',
+    answer: "Bella is a custom AI chatbot built exclusively for members — trained on the community's methodology, frameworks, and full prompt library. She can help you research destinations, build itineraries, find allergy-safe options, and plan for accessibility needs — 24/7, in seconds. She's the flagship feature of your membership and not available anywhere else.",
   },
   {
     question: 'Can both spouses use the membership?',
@@ -107,7 +107,7 @@ const faqItems = [
   },
   {
     question: 'Can I cancel anytime?',
-    answer: "Yes, no questions asked. The free tier is free forever. Premium is a monthly subscription — cancel anytime directly through Skool. We're confident the community pays for itself the first time you plan a trip without a travel agent.",
+    answer: "Yes, no questions asked. It's a monthly subscription — cancel anytime directly through Skool. We're confident the community pays for itself the first time you plan a trip without a travel agent.",
   },
 ];
 

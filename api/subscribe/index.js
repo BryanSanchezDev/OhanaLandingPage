@@ -54,7 +54,7 @@ function buildWelcomeEmail(firstName, skoolUrl) {
               href="${skoolUrl}"
               style="display: inline-block; background-color: #fb923c; color: #ffffff; font-weight: 700; font-size: 1rem; text-decoration: none; padding: 14px 28px; border-radius: 100px;"
             >
-              Join the Free Community &rarr;
+              Start for $9.99/month &rarr;
             </a>
           </div>
         </div>
@@ -74,7 +74,7 @@ function buildWelcomeEmail(firstName, skoolUrl) {
 
 Bienvenido to the ohana! You just joined a community of families who use AI to plan smarter, less stressful trips together, including families navigating accessibility needs and food allergies. We've got your back every step of the way, from the first "where should we go?" to the last packed suitcase.
 
-Join the free community: ${skoolUrl}
+Start for $9.99/month: ${skoolUrl}
 
 Pura vida. 🌿
 
@@ -140,6 +140,9 @@ module.exports = async function (context, req) {
       utmContent: body.utmContent || "",
       utmTerm: body.utmTerm || "",
       signupDate: new Date().toISOString(),
+      // Always false at write time — there's no webhook from Skool to flip
+      // this on actual $9.99/month payment completion, so it stays false
+      // unless updated manually or via a future Skool integration.
       convertedToSkool: false,
     });
 

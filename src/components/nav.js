@@ -76,7 +76,7 @@ const navHTML = `
         </div>
 
         <button type="button" class="btn btn-primary" onclick="window.openLeadModal()">
-          Join Free ✈️
+          Start for $9.99/month ✈️
         </button>
 
       </div>

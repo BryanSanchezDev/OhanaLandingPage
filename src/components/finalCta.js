@@ -86,15 +86,16 @@ const finalCtaHTML = `
     <div class="container">
       <h2>That trip your family keeps<br>talking about? <em>Let's make it happen.</em></h2>
       <p>
-        Join free today. Take the 5-lesson starter course. Build your Family Travel Profile.
-        And finally start planning the trip your crew actually deserves. Pura vida. 🌍
+        Join today for $9.99/month. Get the full course library, Bella (your AI Travel Consultant),
+        and weekly live sessions. Build your Family Travel Profile and finally start planning the
+        trip your crew actually deserves. Pura vida. 🌍
       </p>
       <div class="final-cta-group">
         <button type="button" class="final-cta-btn" onclick="window.openLeadModal()">
-          🚀 Join Free — No Credit Card Needed
+          🚀 Start for $9.99/month
         </button>
       </div>
-      <p class="final-note">Free to join · 5-lesson starter course included · Accessibility &amp; Allergy expertise built in</p>
+      <p class="final-note">$9.99/month · Cancel anytime · Accessibility &amp; Allergy expertise built in</p>
     </div>
   </section>
 `;

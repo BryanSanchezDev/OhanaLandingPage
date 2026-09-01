@@ -10,7 +10,9 @@ const featuresStyles = `
 
   .tiers-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
     gap: 28px;
   }
 
@@ -137,55 +139,34 @@ const featuresHTML = `
       <div class="features-header">
         <div class="tag">What's Included</div>
         <h2 class="section-title">Everything your family needs to plan like a pro.</h2>
-        <p class="section-subtitle">Start free and get real results. Upgrade when you're ready for the full system.</p>
+        <p class="section-subtitle">One membership. Everything unlocked. No free trial, no upsells.</p>
       </div>
 
       <div class="tiers-grid">
 
-        <!-- Free Tier -->
-        <div class="tier-card">
-          <div class="tier-header">
-            <div class="tier-badge free">✅ 100% Free</div>
-            <div class="tier-name">Starter Membership</div>
-            <div class="tier-price"><strong>$0</strong> — always free</div>
-          </div>
-          <div class="tier-body">
-            <ul class="feature-list">
-              <li><span class="check">✓</span> <span>"How to Use AI to Plan Your First Family Trip" — full 5-lesson starter course</span></li>
-              <li><span class="check">✓</span> <span>10–15 curated AI prompt templates (destinations, packing, budgeting, logistics)</span></li>
-              <li><span class="check">✓</span> <span>Community feed access — ask questions, share wins, get inspired</span></li>
-              <li><span class="check">✓</span> <span>Monthly live Q&amp;A with Bryan</span></li>
-              <li><span class="check">✓</span> <span>Weekly trip inspiration and AI tips</span></li>
-            </ul>
-            <div class="tier-cta">
-              <button type="button" class="btn btn-navy" onclick="window.openLeadModal()">
-                Join Free Today
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Premium Tier -->
+        <!-- All-Access Membership -->
         <div class="tier-card featured">
           <div class="tier-header">
             <div class="tier-badge premium">👑 Full System</div>
-            <div class="tier-name">Premium Membership</div>
-            <div class="tier-price"><strong>$67</strong>/month</div>
+            <div class="tier-name">All-Access Membership</div>
+            <div class="tier-price"><strong>$9.99</strong>/month</div>
             <div class="founding-note-small">
-              💰 Or save with annual: $670/year — 10 months for the price of 12
+              💰 Or save with annual: $99/year — 10 months for the price of 12
             </div>
           </div>
           <div class="tier-body">
             <ul class="feature-list">
-              <li><span class="check">✓</span> <span>7-module in-depth course library (accessibility, allergy travel, itinerary building, budgeting + more)</span></li>
-              <li><span class="check">✓</span> <span>Private AI Travel Consultant — a custom chatbot built exclusively for members, available 24/7</span></li>
+              <li><span class="check">✓</span> <span>Full course library (accessibility, allergy travel, itinerary building, budgeting + more)</span></li>
+              <li><span class="check">✓</span> <span>Bella — your private AI Travel Consultant, a custom chatbot available 24/7</span></li>
+              <li><span class="check">✓</span> <span>Full AI prompt &amp; template vault (destinations, packing, budgeting, logistics)</span></li>
               <li><span class="check">✓</span> <span>Restaurant allergy cards in multiple languages</span></li>
-              <li><span class="check">✓</span> <span>2 live sessions/week + "Plan With Me" live sessions</span></li>
+              <li><span class="check">✓</span> <span>Weekly live sessions + "Plan With Me" live sessions</span></li>
+              <li><span class="check">✓</span> <span>Community access — ask questions, share wins, get inspired</span></li>
               <li><span class="check">✓</span> <span>Personal trip feedback from Bryan</span></li>
             </ul>
             <div class="tier-cta">
               <button type="button" class="btn btn-primary" onclick="window.openLeadModal()">
-                🚀 Get Full Access
+                Start for $9.99/month
               </button>
             </div>
           </div>

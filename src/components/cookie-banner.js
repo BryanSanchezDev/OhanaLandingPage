@@ -114,6 +114,13 @@ function isConsentValid(consent) {
   return Date.now() - consent.timestamp < CONSENT_MAX_AGE_MS;
 }
 
+// Shared by any code that needs to gate marketing/analytics behavior
+// (e.g. conversion pixels in lead-form.js) on real, unexpired consent.
+function hasMarketingConsent() {
+  const consent = getStoredConsent();
+  return isConsentValid(consent) && consent.marketing === true;
+}
+
 function storeConsent(consent) {
   localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
 }
@@ -170,4 +177,4 @@ function initCookieBanner() {
   });
 }
 
-export { initCookieBanner };
+export { initCookieBanner, hasMarketingConsent };

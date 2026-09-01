@@ -1,5 +1,11 @@
 /**
- * lead-form.js — Free Community Signup Modal
+ * lead-form.js — Signup Modal
+ *
+ * Captures name + email + UTM params on our domain, then redirects to
+ * /thank-you, which tells the visitor to check their email for their
+ * Skool join link (sent via the welcome email in api/subscribe). Google
+ * Ads / Meta conversion pixels fire on /thank-you page load, not here —
+ * see the caveat comment in public/thank-you.html.
  *
  * Self-contained: styles, markup, and behaviour are all produced by
  * buildLeadForm(), scoped under the .ohana-form- prefix so this can
@@ -17,7 +23,6 @@
 
 import { getUTMParams } from "../utils/utm.js";
 
-const GTAG_CONVERSION_ID = "REPLACE_WITH_GTAG_ID";
 const TRANSITION_MS = 200;
 
 /* ─── LEAD FORM STYLES ───────────────────────────────────────── */
@@ -236,9 +241,9 @@ function buildLeadForm(id = "ohana-form-1") {
       <div class="ohana-form-card" id="${id}-card">
         <button type="button" class="ohana-form-close" id="${id}-close" aria-label="Close">&times;</button>
 
-        <div class="ohana-form-badge">FREE COMMUNITY 🌿</div>
+        <div class="ohana-form-badge">$9.99/MONTH 🌿</div>
         <h2 class="ohana-form-headline">Join Families Who Travel Smarter</h2>
-        <p class="ohana-form-subheadline">Learn how to plan any trip using AI, including trips with accessibility needs and food allergies. Free to join, no credit card needed.</p>
+        <p class="ohana-form-subheadline">Learn how to plan any trip using AI, including trips with accessibility needs and food allergies. Full access for $9.99/month.</p>
 
         <form class="ohana-form-form" id="${id}-form" novalidate>
           <div class="ohana-form-field">
@@ -262,7 +267,7 @@ function buildLeadForm(id = "ohana-form-1") {
             />
           </div>
           <button type="submit" class="ohana-form-submit" id="${id}-submit">
-            Join the Free Community →
+            Start for $9.99/month →
           </button>
           <p class="ohana-form-disclaimer">No spam. Just real travel help. Unsubscribe anytime.</p>
           <p class="ohana-form-error-message" id="${id}-error">Something went wrong. Try again in a moment.</p>
@@ -284,15 +289,6 @@ function buildLeadForm(id = "ohana-form-1") {
 }
 
 /* ─── LEAD FORM BEHAVIOUR ────────────────────────────────────── */
-function fireConversionPixels() {
-  if (typeof window.fbq === "function") {
-    window.fbq("track", "Lead");
-  }
-  if (typeof window.gtag === "function") {
-    window.gtag("event", "conversion", { send_to: GTAG_CONVERSION_ID });
-  }
-}
-
 function resetLeadForm(id) {
   const form = document.getElementById(`${id}-form`);
   const successState = document.getElementById(`${id}-success`);
@@ -311,7 +307,7 @@ function resetLeadForm(id) {
   emailInput.classList.remove("ohana-form-input--error");
   errorMessage.classList.remove("ohana-form-error-message--visible");
   submitBtn.disabled = false;
-  submitBtn.textContent = "Join the Free Community →";
+  submitBtn.textContent = "Start for $9.99/month →";
 }
 
 function openLeadModal(id = "ohana-form-1") {
@@ -413,7 +409,6 @@ function initLeadForm(id = "ohana-form-1") {
       successState.classList.add("ohana-form-success--visible");
 
       setTimeout(() => {
-        fireConversionPixels();
         window.location.href = "/thank-you";
       }, 2000);
     } catch (err) {

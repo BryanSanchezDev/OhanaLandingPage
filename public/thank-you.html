@@ -3,18 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>You're In! — AI Ohana Travel Academy</title>
-    <meta name="description" content="You're officially part of the AI Ohana Travel Academy family. Check your inbox for your welcome email." />
+    <title>Check Your Email! — AI Ohana Travel Academy</title>
+    <meta name="description" content="Thanks for signing up. Check your email for your welcome message and your link to join AI Ohana Travel Academy." />
     <meta name="robots" content="noindex" />
     <link rel="icon" href="/images/favicon.ico" />
 
     <!-- META PIXEL BASE CODE — paste your pixel snippet here -->
     <!-- GOOGLE TAG BASE CODE — paste your Google Tag snippet here -->
+    <!--
+      IMPORTANT CAVEAT: Skool has no checkout-completion webhook back to this
+      site, so this pixel fires when someone reaches this page after
+      submitting our lead form, not when they actually complete the
+      $9.99/month payment on Skool's own page. Google/Meta will be
+      optimizing toward form-fills, not verified paying members, so
+      reported conversions will overcount actual signups. Known
+      limitation, not a bug, don't try to "fix" it here.
+
+      CONSENT GATING: this page is a standalone document (it does not load
+      src/main.js), so the cookieConsentGranted CustomEvent from the SPA
+      never reaches it, that event only fires in-memory during the SPA's
+      own page lifetime. What DOES carry over is the consent choice itself,
+      stored in localStorage under the same key cookie-banner.js uses, so
+      hasMarketingConsent() below re-implements that same check directly
+      against localStorage. Paste the real base pixel snippets where marked
+      further down, inside the same gated block, so they only ever load
+      after real consent.
+    -->
     <script>
-      window.addEventListener('load', function() {
-        if (typeof fbq === 'function') fbq('track', 'Lead');
-        if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'REPLACE_WITH_GTAG_ID' });
-      });
+      (function () {
+        var CONSENT_KEY = 'ohana_cookie_consent';
+        var MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000;
+
+        function hasMarketingConsent() {
+          try {
+            var raw = localStorage.getItem(CONSENT_KEY);
+            if (!raw) return false;
+            var consent = JSON.parse(raw);
+            if (!consent || typeof consent.timestamp !== 'number') return false;
+            if (Date.now() - consent.timestamp >= MAX_AGE_MS) return false;
+            return consent.marketing === true;
+          } catch (err) {
+            return false;
+          }
+        }
+
+        if (!hasMarketingConsent()) return;
+
+        // ─── Paste real Meta Pixel base snippet here ───
+        // ─── Paste real Google Tag base snippet here ───
+
+        window.addEventListener('load', function () {
+          if (typeof fbq === 'function') fbq('track', 'Lead');
+          if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'REPLACE_WITH_GTAG_ID' });
+        });
+      })();
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -132,24 +174,15 @@
         color: var(--slate-dark);
         font-size: 1.05rem;
         line-height: 1.65;
-        margin-bottom: 32px;
+        margin-bottom: 16px;
       }
 
-      .thank-you-btn {
-        display: inline-block;
-        background: var(--orange);
-        color: var(--white);
-        font-weight: 700;
-        font-size: 1.05rem;
-        text-decoration: none;
-        border-radius: 10px;
-        padding: 16px 36px;
-        transition: background 0.25s ease, transform 0.25s ease;
-      }
-
-      .thank-you-btn:hover {
-        background: #ea7c2b;
-        transform: translateY(-2px);
+      .thank-you-note {
+        font-weight: 400;
+        color: var(--slate-mid);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 8px;
       }
 
       .thank-you-back {
@@ -181,11 +214,6 @@
         .thank-you-card {
           padding: 36px 24px;
         }
-
-        .thank-you-btn {
-          display: block;
-          width: 100%;
-        }
       }
     </style>
   </head>
@@ -202,15 +230,9 @@
           <path class="thank-you-check" d="M19 28.5L25 34.5L37 21.5" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
 
-        <h1 class="thank-you-headline">You're officially in. Welcome to the family! 🌿</h1>
-        <p class="thank-you-sub">Check your inbox for a welcome email with your next steps.</p>
-
-        <a
-          href="https://www.skool.com/ai-family-travel-academy-1186/about"
-          class="thank-you-btn"
-        >
-          Join the Free Community →
-        </a>
+        <h1 class="thank-you-headline">Check your email! 🌿</h1>
+        <p class="thank-you-sub">We just sent your welcome email with your personal link to join Ohana Travel Academy for $9.99/month. It should land in your inbox any minute now.</p>
+        <p class="thank-you-note">Don't see it yet? Check your spam or promotions folder, sometimes it likes to hide there.</p>
 
         <div>
           <a href="/" class="thank-you-back">← Back to Ohana Travel</a>
@@ -219,22 +241,5 @@
     </div>
 
     <div class="thank-you-footer">Pura vida. 🌿 | Ohana Travel Academy</div>
-
-    <script>
-      (function () {
-        var utmKeys = ['utm_source', 'utm_campaign', 'utm_medium', 'utm_content', 'utm_term'];
-        var params = new URLSearchParams(window.location.search);
-        var link = document.querySelector('a[href*="skool.com"]');
-
-        if (!link) return;
-
-        var url = new URL(link.href);
-        utmKeys.forEach(function (key) {
-          var value = params.get(key);
-          if (value) url.searchParams.set(key, value);
-        });
-        link.href = url.toString();
-      })();
-    </script>
   </body>
 </html>

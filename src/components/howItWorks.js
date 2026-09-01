@@ -75,16 +75,16 @@ const howItWorksHTML = `
       <div class="steps-header">
         <div class="tag">The System</div>
         <h2 class="section-title">From overwhelmed to booked in 3 steps.</h2>
-        <p class="section-subtitle">No travel experience required. Just a little curiosity and a free account.</p>
+        <p class="section-subtitle">No travel experience required. Just a little curiosity and $9.99/month.</p>
       </div>
 
       <div class="steps-grid">
 
         <div class="step-card">
           <div class="step-number">1</div>
-          <div class="step-icon">🆓</div>
-          <h3>Join Free</h3>
-          <p>Create your free account on Skool and get instant access to the 5-lesson starter course, AI prompt library, and community. No credit card. No catch.</p>
+          <div class="step-icon">🔑</div>
+          <h3>Join for $9.99/month</h3>
+          <p>Join the community on Skool for $9.99/month and get instant access to the full course library, Bella (your AI Travel Consultant), and the AI prompt vault.</p>
         </div>
 
         <div class="step-card">

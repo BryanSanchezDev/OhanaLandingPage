@@ -146,7 +146,7 @@ const heroHTML = `
         <div>
           <div class="hero-badge fade-up">
             <span class="hero-badge-dot"></span>
-            Free Community · No Credit Card Needed
+            All-Access Membership · $9.99/month
           </div>
 
           <h1 class="fade-up delay-1">
@@ -163,14 +163,14 @@ const heroHTML = `
 
           <div class="hero-cta-group fade-up delay-3">
             <button type="button" class="btn btn-primary" onclick="window.openLeadModal()">
-              🚀 Join Free — Start Planning Today
+              🚀 Start for $9.99/month
             </button>
             <a href="#how-it-works" class="btn btn-outline">
               See How It Works
             </a>
           </div>
 
-          <p class="hero-note fade-up delay-4">Free to join · 5-lesson starter course included · No credit card</p>
+          <p class="hero-note fade-up delay-4">$9.99/month · Cancel anytime · Full course library included</p>
         </div>
 
         <!-- Right: Photo -->
@@ -186,8 +186,8 @@ const heroHTML = `
           </div>
 
           <div class="hero-stat-card top-right">
-            <div class="stat-number">FREE</div>
-            <div class="stat-label">to join & get started</div>
+            <div class="stat-number">$9.99</div>
+            <div class="stat-label">/month — full access</div>
           </div>
         </div>
 
