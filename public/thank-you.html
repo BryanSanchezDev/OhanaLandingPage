@@ -50,11 +50,23 @@
         if (!hasMarketingConsent()) return;
 
         // ─── Paste real Meta Pixel base snippet here ───
-        // ─── Paste real Google Tag base snippet here ───
+        // ─── Google Tag base snippet (gtag.js) ───
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18428738025';
+        document.head.appendChild(gtagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-18428738025');
+
+        gtag('event', 'conversion', {
+            'send_to': 'AW-18428738025/vcGVCI2N3O0cEOnzwNNE'
+        });
 
         window.addEventListener('load', function () {
           if (typeof fbq === 'function') fbq('track', 'Lead');
-          if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'REPLACE_WITH_GTAG_ID' });
         });
       })();
     </script>
