@@ -73,8 +73,11 @@ const footerHTML = `
 
         <nav class="footer-links">
           <a href="#" onclick="window.openLeadModal(); return false;">Join the Community</a>
+          <a href="#features">Features</a>
           <a href="#how-it-works">How It Works</a>
           <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="#about">About</a>
           <!--
             REQUIRED FOR AD COMPLIANCE (Facebook & Google Ads):
             Add your Privacy Policy and Terms of Service URLs here.

@@ -133,7 +133,7 @@ const featuresStyles = `
 
 /* ─── FEATURES HTML ──────────────────────────────────────────── */
 const featuresHTML = `
-  <section class="section section-alt">
+  <section class="section section-alt" id="features">
     <div class="container">
 
       <div class="features-header">

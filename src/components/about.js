@@ -112,7 +112,7 @@ const aboutStyles = `
 
 /* ─── ABOUT HTML ─────────────────────────────────────────────── */
 const aboutHTML = `
-  <section class="section">
+  <section class="section" id="about">
     <div class="container">
       <div class="about-grid">
 

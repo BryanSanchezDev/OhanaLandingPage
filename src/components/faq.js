@@ -113,7 +113,7 @@ const faqItems = [
 
 /* ─── FAQ HTML ───────────────────────────────────────────────── */
 const faqHTML = `
-  <section class="section">
+  <section class="section" id="faq">
     <div class="container">
 
       <div class="faq-header">
