@@ -107,7 +107,7 @@ const galleryPhotos = [
 
 /* ─── GALLERY HTML ───────────────────────────────────────────── */
 const galleryHTML = `
-  <section class="section">
+  <section class="section" id="gallery">
     <div class="container">
 
       <div class="gallery-header">

@@ -78,6 +78,7 @@ const footerHTML = `
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
           <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
           <!--
             REQUIRED FOR AD COMPLIANCE (Facebook & Google Ads):
             Add your Privacy Policy and Terms of Service URLs here.
