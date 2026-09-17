@@ -47,9 +47,15 @@ const styleBlocks = [
   footerStyles,
 ];
 
-const styleTag = document.createElement("style");
-styleTag.textContent = styleBlocks.join("\n");
-document.head.appendChild(styleTag);
+// The homepage is prerendered at build time (see scripts/prerender.mjs),
+// so this exact <style> tag may already be baked into the initial HTML —
+// skip re-adding it to avoid a harmless-but-wasteful duplicate on load.
+if (!document.getElementById("ohana-app-styles")) {
+  const styleTag = document.createElement("style");
+  styleTag.id = "ohana-app-styles";
+  styleTag.textContent = styleBlocks.join("\n");
+  document.head.appendChild(styleTag);
+}
 
 // ─── Assemble page HTML ───────────────────────────────────────
 const sections = [

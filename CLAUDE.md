@@ -24,6 +24,17 @@ Each page section is a self-contained module in `src/components/` that exports:
 - `initLeadForm(id)`, `openLeadModal(id)`, `closeLeadModal(id)` — named exports for wiring behavior and controlling the modal.
 - `main.js` mounts exactly one instance (`ohana-form-main`) into a `#ohana-modal-mount` div appended to `#app`, and exposes `window.openLeadModal = () => openLeadModal("ohana-form-main")` so plain `onclick="window.openLeadModal()"` attributes anywhere in the page's HTML strings can open it (inline `<script>` tags can't be used here since content is inserted via `.innerHTML`, which doesn't execute them).
 
+## Build / Prerendering
+
+`npm run build` is `vite build && node scripts/prerender.mjs`. The prerender step serves the built `dist/` with Vite's `preview()`, drives headless Chrome (Puppeteer) to it, waits for `main.js` to populate `#app`, and overwrites `dist/index.html` with the fully-rendered DOM. This exists because the raw Vite output ships an empty `<div id="app"></div>` shell — crawlers that don't execute JS (e.g. AdsBot-Google) saw a blank page, which got this project's Google Ads account suspended for cloaking.
+
+Real users are unaffected: the `<script type="module">` tag survives the bake, so `main.js` still runs and re-renders on load. Two idempotency guards make that re-render safe instead of duplicating things the first render appended outside `#app` (which gets fully replaced by `#app.innerHTML = ...` and so self-cleans, but `document.head`/`document.body` don't):
+
+- `main.js`'s aggregated `<style id="ohana-app-styles">` tag — skipped if already present.
+- `cookie-banner.js`'s banner — reuses an existing `.ohana-cookie-banner` element (and (re)attaches its button listeners to it) instead of appending a second one, since the prerender browser also starts with no stored consent.
+
+The GitHub Actions workflow runs `npm ci && npm run build` itself (on the plain `ubuntu-latest` runner, which has what Puppeteer's Chromium needs) and passes `skip_app_build: true` to `Azure/static-web-apps-deploy`, since that action's own Oryx build container isn't guaranteed to have Chromium's system dependencies.
+
 ## Backend / API
 
 `api/` is an Azure Functions app (v3 JS model: `function.json` + `index.js` per function, `host.json` at the root) with its own `package.json` — install its dependencies separately with `cd api && npm install`.

@@ -149,24 +149,31 @@ function initCookieBanner() {
     document.head.appendChild(styleTag);
   }
 
-  const banner = document.createElement("div");
-  banner.className = "ohana-cookie-banner";
-  banner.innerHTML = `
-    <p class="ohana-cookie-text">
-      We use cookies to improve your experience and track conversions.
-      <a href="/privacy-policy">Read our Privacy Policy</a>
-    </p>
-    <div class="ohana-cookie-actions">
-      <button type="button" class="ohana-cookie-btn ohana-cookie-btn--accept" id="ohanaCookieAccept">
-        Accept All
-      </button>
-      <button type="button" class="ohana-cookie-btn ohana-cookie-btn--essential" id="ohanaCookieEssential">
-        Essential Only
-      </button>
-    </div>
-  `;
-
-  document.body.appendChild(banner);
+  // The homepage is prerendered at build time (see scripts/prerender.mjs),
+  // and the prerender browser also has no stored consent, so a banner may
+  // already be baked into the initial HTML. Reuse it instead of appending
+  // a second one — its buttons still need listeners wired below either way,
+  // since baked-in markup carries no JS event listeners with it.
+  let banner = document.querySelector(".ohana-cookie-banner");
+  if (!banner) {
+    banner = document.createElement("div");
+    banner.className = "ohana-cookie-banner";
+    banner.innerHTML = `
+      <p class="ohana-cookie-text">
+        We use cookies to improve your experience and track conversions.
+        <a href="/privacy-policy">Read our Privacy Policy</a>
+      </p>
+      <div class="ohana-cookie-actions">
+        <button type="button" class="ohana-cookie-btn ohana-cookie-btn--accept" id="ohanaCookieAccept">
+          Accept All
+        </button>
+        <button type="button" class="ohana-cookie-btn ohana-cookie-btn--essential" id="ohanaCookieEssential">
+          Essential Only
+        </button>
+      </div>
+    `;
+    document.body.appendChild(banner);
+  }
 
   banner.querySelector("#ohanaCookieAccept").addEventListener("click", () => {
     handleChoice(banner, { analytics: true, marketing: true, timestamp: Date.now() });
