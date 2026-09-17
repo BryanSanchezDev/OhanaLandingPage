@@ -30,7 +30,16 @@ async function prerender() {
   const server = await preview({ preview: { port: 0 } });
   const address = server.resolvedUrls.local[0];
 
-  const browser = await puppeteer.launch({ headless: true });
+  // --no-sandbox/--disable-setuid-sandbox: standard, accepted practice for
+  // CI prerendering — GitHub-hosted Ubuntu runners can't set up Chromium's
+  // Linux sandbox (no unprivileged user namespaces). This only affects this
+  // build-time step, not anything a real visitor runs, and it's a no-op on
+  // Windows/macOS (Chromium ignores Linux-only sandbox flags there), so it
+  // doesn't change local (e.g. Windows) behavior.
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
 
   try {
     const page = await browser.newPage();
