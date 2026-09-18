@@ -140,7 +140,16 @@ function handleChoice(banner, consent) {
 }
 
 function initCookieBanner() {
-  if (isConsentValid(getStoredConsent())) return;
+  if (isConsentValid(getStoredConsent())) {
+    // The homepage is prerendered at build time with no consent present,
+    // so a banner is unconditionally baked into the initial HTML. If this
+    // real visitor already made a still-valid choice on an earlier visit,
+    // remove that stale banner instead of leaving it on screen with no
+    // click handlers attached (it never gets wired up below in this case).
+    const staleBanner = document.querySelector(".ohana-cookie-banner");
+    if (staleBanner) staleBanner.remove();
+    return;
+  }
 
   if (!document.getElementById("ohana-cookie-banner-styles")) {
     const styleTag = document.createElement("style");
