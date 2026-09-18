@@ -24,6 +24,9 @@
 import { getUTMParams } from "../utils/utm.js";
 
 const TRANSITION_MS = 200;
+// Same pattern used by api/subscribe/index.js's server-side check — kept
+// in sync manually since the two run in different bundling contexts.
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /* ─── LEAD FORM STYLES ───────────────────────────────────────── */
 const leadFormStyles = `
@@ -371,11 +374,20 @@ function initLeadForm(id = "ohana-form-1") {
 
     const firstName = firstNameInput.value.trim();
     const email = emailInput.value.trim();
+    const isValidEmail = EMAIL_REGEX.test(email);
 
     firstNameInput.classList.toggle("ohana-form-input--error", !firstName);
-    emailInput.classList.toggle("ohana-form-input--error", !email);
+    emailInput.classList.toggle("ohana-form-input--error", !isValidEmail);
 
-    if (!firstName || !email) return;
+    if (!firstName || !isValidEmail) {
+      errorMessage.textContent = !firstName && !isValidEmail
+        ? "Please enter your first name and a valid email address."
+        : !isValidEmail
+          ? "Please enter a valid email address."
+          : "Please enter your first name.";
+      errorMessage.classList.add("ohana-form-error-message--visible");
+      return;
+    }
 
     errorMessage.classList.remove("ohana-form-error-message--visible");
     submitBtn.disabled = true;
@@ -412,6 +424,7 @@ function initLeadForm(id = "ohana-form-1") {
         window.location.href = "/thank-you";
       }, 2000);
     } catch (err) {
+      errorMessage.textContent = "Something went wrong. Try again in a moment.";
       errorMessage.classList.add("ohana-form-error-message--visible");
       submitBtn.disabled = false;
       submitBtn.textContent = originalBtnText;

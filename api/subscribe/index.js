@@ -1,6 +1,11 @@
 const { TableClient } = require("@azure/data-tables");
 const { Resend } = require("resend");
 
+// Same pattern used by src/components/lead-form.js's client-side check —
+// kept in sync manually since the two run in different bundling contexts.
+// Client-side validation can always be bypassed, so this is the real gate.
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 // Falls back to the default *.azurestaticapps.net hostname for this SWA
 // resource; override with a custom domain via the ALLOWED_ORIGIN app setting.
 const ALLOWED_ORIGIN =
@@ -105,7 +110,7 @@ module.exports = async function (context, req) {
   const body = req.body || {};
   const email = typeof body.email === "string" ? body.email.trim() : "";
 
-  if (!email || !email.includes("@")) {
+  if (!EMAIL_REGEX.test(email)) {
     context.res = {
       status: 400,
       headers: { "Content-Type": "application/json", ...corsHeaders() },
